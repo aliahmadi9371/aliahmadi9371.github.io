@@ -1,7 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        #header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #profile {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #profile img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+
+        #social-links {
+            text-align: center;
+        }
+
+        #social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+        }
+
+        #resume-sections {
+            padding: 20px;
+        }
+
+        .resume-section {
+            display: none;
+        }
+
+        .resume-section.active {
+            display: block;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello I am Ali Ahmadi. This web page will be prepared soon!</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <div id="header">
+        <h1>Your Name</h1>
+    </div>
+
+    <div id="profile">
+        <img src="your-profile-image.jpg" alt="Your Profile Image">
+        <p>Social Media:</p>
+        <div id="social-links">
+            <a href="your-social-media-link1"><img src="social-media-logo1.png" alt="Social Media Logo 1"></a>
+            <a href="your-social-media-link2"><img src="social-media-logo2.png" alt="Social Media Logo 2"></a>
+            <!-- Add more social media links and logos as needed -->
+        </div>
+    </div>
+
+    <div id="resume-sections">
+        <h2>Resume Sections</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('section1')">Section 1</a></li>
+            <li><a href="#" onclick="showSection('section2')">Section 2</a></li>
+            <li><a href="#" onclick="showSection('section3')">Section 3</a></li>
+            <!-- Add more resume sections as needed -->
+        </ul>
+    </div>
+
+    <div class="resume-section" id="section1">
+        <h3>Section 1</h3>
+        <p>Your content for Section 1 goes here.</p>
+    </div>
+
+    <div class="resume-section" id="section2">
+        <h3>Section 2</h3>
+        <p>Your content for Section 2 goes here.</p>
+    </div>
+
+    <div class="resume-section" id="section3">
+        <h3>Section 3</h3>
+        <p>Your content for Section 3 goes here.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.resume-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+
 </body>
 </html>
