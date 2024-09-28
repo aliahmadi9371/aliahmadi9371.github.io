@@ -1,115 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Ahmadi - Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-
-        #header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #profile {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        #profile img {
-            border-radius: 50%;
-            max-width: 150px;
-            margin-bottom: 10px;
-        }
-
-        #social-links {
-            text-align: center;
-        }
-
-        #social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-        }
-
-        #resume-sections {
-            padding: 20px;
-        }
-
-        .resume-section {
-            display: none;
-        }
-
-        .resume-section.active {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ali Ahmadi</title>
+  <style>
+    /* Simple Dark Theme */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    header {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+    header h1 {
+      margin: 10px 0;
+    }
+    header a {
+      color: #f39c12;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      color: #f39c12;
+      border-bottom: 2px solid #f39c12;
+      padding-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
 
-    <div id="header">
-        <h1>Ali Ahmadi</h1>
-    </div>
+  <header>
+    <img src="./your-profile-image.jpg" alt="Ali Ahmadi">
+    <h1>Ali Ahmadi</h1>
+    <p><a href="https://www.linkedin.com/in/aliahmadi9371/">LinkedIn</a> | <a href="mailto:aliahmadi9371@gmail.com">youremail@example.com</a> | +98 912-647-0868</p>
+  </header>
 
-    <div id="profile">
-        <img src="./your-profile-image.jpg" alt="Your Profile Image">
-        <p>Social Media:</p>
-        <div id="social-links">
-            <a href="https://www.linkedin.com/in/aliahmadi9371/"><img src="linkedin.png" alt=""></a>
-            <!-- Add more social media links and logos as needed -->
-        </div>
-    </div>
+  <section>
+    <h2>Academic Experiences</h2>
+    <p>Your academic experience details go here.</p>
+  </section>
 
-    <div id="resume-sections">
-        <h2>Resume Sections</h2>
-        <ul>
-            <li><a href="#" onclick="showSection('section1')">Section 1</a></li>
-            <li><a href="#" onclick="showSection('section2')">Section 2</a></li>
-            <li><a href="#" onclick="showSection('section3')">Section 3</a></li>
-            <!-- Add more resume sections as needed -->
-        </ul>
-    </div>
-
-    <div class="resume-section" id="section1">
-        <h3>About</h3>
-        <p>Your content for Section 1 goes here.</p>
-    </div>
-
-    <div class="resume-section" id="section2">
-        <h3>Experinces</h3>
-        <p>Your content for Section 2 goes here.</p>
-    </div>
-
-    <div class="resume-section" id="section3">
-        <h3>Educations</h3>
-        <p>Your content for Section 3 goes here.</p>
-    </div>
-
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            var sections = document.querySelectorAll('.resume-section');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-            });
-
-            // Show the selected section
-            var selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-            }
-        }
-    </script>
+  <section>
+    <h2>Work Experiences</h2>
+    <p>Your work experience details go here.</p>
+  </section>
 
 </body>
 </html>
