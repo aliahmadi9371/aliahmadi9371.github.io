@@ -39,12 +39,18 @@
       border-bottom: 2px solid #f39c12;
       padding-bottom: 5px;
     }
-    .project-image {
+    /* Flexbox container for images */
+    .project-images {
+      display: flex;
+      gap: 20px; /* Space between images */
       margin: 20px 0;
+    }
+    .project-image {
+      flex: 1; /* Allow images to take equal space */
     }
     .project-image img {
       width: 100%;
-      max-width: 600px;
+      max-width: 300px; /* Max width for each image */
       height: auto;
       border-radius: 10px;
     }
@@ -181,12 +187,21 @@
         <p><strong>Embedded Systems Engineer</strong>, Sep 2017 - Feb 2021</p>
         <p><strong>Asarad Noavar Ertebat</strong>, Tehran, Iran</p>
         <!-- New Content: Picture and Description under Asarad Noavar Ertebat -->
-        <div class="project-image">
-          <img src="./project1-1.jpg" alt="ID Card Scanner">
-          <p>Developed Ticket Scanner to handle up to 500 request/day</p>
-          <p>D Card Scanner (Tehran Taxi Organization - ACECR KNUT branch, Tehran, Iran)</p>
-          <p>Orange Pi PC (QT - C++ - Embedded Linux)</p>
-       </div>
+        <p>Developed Ticket Scanner to handle up to 500 request/day</p>
+        <div class="project-images">
+          <!-- First Image -->
+          <div class="project-image">
+            <img src="./project1-1.jpg" alt="ID Card Scanner">
+            <p>ID Card Scanner (Tehran Taxi Organization - ACECR KNUT branch, Tehran, Iran)</p>
+            <p>Orange Pi PC (QT - C++ - Embedded Linux)</p>
+          </div>
+
+          <!-- Second Image (New Image on the right) -->
+          <div class="project-image">
+            <img src="./project1-2.jpg" alt="Ticket Scanner">
+            <p>ID Card Scanner (Tehran Taxi Organization - ACECR KNUT branch, Tehran, Iran)</p>
+            <p>Orange Pi PC (QT - C++ - Embedded Linux)</p>
+          </div>
 
         <!-- GitHub Link -->
         <div class="project-link">
