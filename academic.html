@@ -39,6 +39,32 @@
       border-bottom: 2px solid #f39c12;
       padding-bottom: 5px;
     }
+    /* Flexbox container for images */
+    .project-images {
+      display: flex;
+      gap: 20px; /* Space between images */
+      margin: 20px 0;
+    }
+    .project-image {
+      flex: 1; /* Allow images to take equal space */
+    }
+    .project-image img {
+      width: 100%;
+      max-width: 300px; /* Max width for each image */
+      height: auto;
+      border-radius: 10px;
+    }
+    .project-image p {
+      margin: 10px 0;
+      font-style: italic;
+    }
+    .project-link a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+    .project-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -108,11 +134,26 @@
             <li>Participated in a weekly journal club ISSCC, Sharif University of Technology, 2016</li>
             <li>DNA sequencing by reading the current and voltage changes of a biased graphene when a DNA strand passes through a nanometer hole on it by an 18-bit ADC, Jul 2016</li>
             <li>Performed a ten-function calculator with Qt, Dec 2015</li>
+            <li>Desinged and implemented an auto-navigated robot, Microprocessor System Desing, FALL 2015</li>
             <li>Developed a discrete 400 KHz band-pass filter, Apr 2015</li>
             <li>Design and Implementation of a Caller ID circuit, Apr 2014</li>
             <li>Filtered noise from voice of a specific person using MATLAB, Dec 2014</li>
             <!-- Add more courses here -->
         </ul>
+
+        <!-- New Content: Two Pictures Side by Side -->
+        <div class="project-images">
+          <!-- First Image -->
+          <div class="project-image">
+              <img src="./project2-1.jpg" alt="Auto-Navigated Robot 1">
+          </div>
+
+          <!-- Second Image (New Image on the right) -->
+          <div class="project-image">
+              <img src="./project2-2.jpg" alt="Auto-Navigated Robot 2">
+          </div>
+        </div>
+        <p>Microprocessor System Desing course, EE Department, Sharif University of Technology, Fall 2015.</p>
       </section>
     
       <section id="selected-courses">
