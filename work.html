@@ -8,168 +8,98 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #ffffff;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #2a2a2a;
+      color: #f0f0f0;
     }
     header {
-      background-color: #333;
+      background-color: #3c3c3c;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     header img {
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
     }
     header h1 {
       margin: 10px 0;
+      font-size: 28px;
     }
     header nav a {
       color: #f39c12;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 10px;
       font-size: 18px;
     }
+    header nav a:hover {
+      color: #ffffff;
+      transition: color 0.3s ease-in-out;
+    }
     section {
-      padding: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
     }
     h2 {
+      font-size: 26px;
       color: #f39c12;
       border-bottom: 2px solid #f39c12;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
     }
-
-    /* Flexbox container for images */
-    .project-images2 {
-      display: flex;
-      gap: 20px; /* Space between images */
-      margin: 20px 0;
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
-    .project-image2 {
-      flex: 1; /* Allow images to take equal space */
-    }
-    .project-image2 img {
-      width: 100%;
-      max-width: 300px; /* Max width for each image */
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .project-image2 img {
-      width: 100%;
-      max-width: 600px; /* Max width for each image */
-      height: auto;
-      border-radius: 10px;
-    }
-    .project-image2 p {
+    ul li {
       margin: 10px 0;
-      font-style: italic;
     }
-    .project-link2 a {
+    ul li::before {
+      content: "•";
       color: #f39c12;
-      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
     }
-    .project-link2 a:hover {
-      text-decoration: underline;
-    }
-
-    /* Flexbox container for images */
     .project-images {
       display: flex;
-      gap: 20px; /* Space between images */
+      flex-wrap: wrap;
+      gap: 20px;
       margin: 20px 0;
     }
     .project-image {
-      flex: 1; /* Allow images to take equal space */
+      flex: 1;
+      max-width: 300px;
     }
     .project-image img {
       width: 100%;
-      max-width: 300px; /* Max width for each image */
-      height: auto;
       border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
     }
-
-    .project-image img {
-      width: 100%;
-      max-width: 300px; /* Max width for each image */
-      height: auto;
-      border-radius: 10px;
-    }
-    .project-image p {
-      margin: 10px 0;
-      font-style: italic;
-    }
-    .project-link a {
-      color: #f39c12;
-      text-decoration: none;
-    }
-    .project-link a:hover {
-      text-decoration: underline;
-    }
-    /* Gallery styles */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 40px;
-    }
-    .gallery img {
-      width: 150px;
-      height: 200px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      border-radius: 5px;
-    }
-    .gallery img:hover {
+    .project-image img:hover {
       transform: scale(1.05);
     }
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content img {
-      width: auto;
-      max-width: 50%;
-      max-height: 50%;
-      border-radius: 10px;
-    }
-    .modal-caption {
-      color: #f39c12;
+    footer {
+      background-color: #3c3c3c;
       text-align: center;
-      margin-top: 10px;
-      font-size: 18px;
-      max-width: 80%;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 40px;
+    footer a {
       color: #f39c12;
-      cursor: pointer;
+      text-decoration: none;
+      margin: 0 15px;
     }
-    .close:hover {
-      color: #fff;
+    footer a:hover {
+      color: #ffffff;
+      transition: color 0.3s ease-in-out;
     }
   </style>
 </head>
@@ -188,556 +118,37 @@
     <h2>Work Experiences</h2>
 
     <section id="skills">
-        <h2>Skills</h2>
-
-        <p>Programming Languages</p>
-        <ul>
-            <li>C/C++ (20), Qt/QML, and C++ Builder</li>
-            <li>Python</li>
-            <li>Bash Script, Shell Script, MakeFile, and CMakeFile</li>
-            <li>Assembly, VHDL, and Verilog</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>Programming Concepts</p>
-        <ul>
-            <li>Object Oriented Design, Analyze, and Programming</li>
-            <li>Design Patterns, Data Structrues</li>
-            <li>Multithreading and Multiprocessingli</li>
-            <li>Socket Programming and Networking</li>
-            <li>Database Connection and Query Execution</li>
-            <li>Desktop Application and GUI</li>
-            <li>Embedded Systems Programming/Linux, Realtime Programming, and Realtime OS</li>
-            <li>Firmware on The Air (FOTA)</li>
-            <li>Qt/C++ Cross-Compilation SDK Preparing</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>Communication Peripherals and Protocols</p>
-        <ul>
-            <li>TCP/IP, UDP, Web Socket, Web Services (SOAP and REST)</li>
-            <li>FTP, SFTP, SSH, SSL, HTTP/HTTPS, MQTT/MQTTs and PPP</li>
-            <li>CAN, Wiegand and RS422/485</li>
-            <li>TTL/RS232, I2C, I2S and SPI</li>
-            <li>ADC, DAC, PWM</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>Tools & IDEs</p>
-        <ul>
-            <li>Qt Creator, Embarcadero RAD Studio and Microsoft Visual Studio</li>
-            <li>Arm Development Studio, Arduino IDE, STM32Cube IDE, PSOC Creator and CodeVision AVR</li>
-            <li>Altium Designer, HSPICE, ADS and Proteus</li>
-            <li>Vim, Git and Jira</li>
-            <li>ADC, DAC, PWM</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>SBCs & Microcontroller/Microprocessor</p>
-        <ul>
-            <li>Raspberry pi, Orange pi, Nano Pi, Lichee Pi, and Banana Pi</li>
-            <li>MYiR Xilinx Series Zynq 7000 and Spartan 6</li>
-            <li>FriendlyARM Tiny210(windows CE evaluation board)</li>
-            <li>Arduino, STM32F103x, ATmega, Xmega, and Cypress PSOC 3/4/5</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>Modules</p>
-        <ul>
-            <li>Bluetooth and Wifi</li>
-            <li>Zigbee and Lora</li>
-            <li>Camera</li>
-            <li>Quectel BG96/M95/M66/M65</li>
-            <li>RTC, E2prom, Flash, and SD Card</li>
-            <li>Sensors: SHT3x, PT100/1000, Modbus (SHT, Light, CO, CO2, PH, Soil PH/SHT, …)</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>Databases</p>
-        <ul>
-            <li>Microsoft SQL Server, MySQL, SQLite and Couchbase</li>
-            <!-- Add more courses here -->
-        </ul>
-
-        <br><br>
-
-        <p>OS</p>
-        <ul>
-            <li>Unix/Linux, RTOS, Win32, MacOS</li>
-            <!-- Add more courses here -->
-        </ul>
+      <h2>Skills</h2>
+      <ul>
+        <li>C/C++, Python, Bash, Shell Script</li>
+        <li>Object-Oriented Design, Multithreading</li>
+        <li>Embedded Systems Programming</li>
+      </ul>
     </section>
 
-    <section id="highlights">
-        <h2>Highlighted Projects</h2>
-        <p>AFM (Atomic Force Microscope) Management Software, Ara Research Co, Tehran, Iran, 2021</p>
-        <p>Temperature Calibrator Device PID controller, ACECR SUT branch, Tehran, Iran, 2021</p>
-        <p>Access Control and Restaurant System, Saipa Yadak Company, Tehran, Iran, 2020</p>
-        <p>Automatic Fare Collection (Tehran Metro), Tehran Metro, Tehran, Iran, 2020</p>
-        <p>Access Control Solution, ACECR KNTU branch, Tehran Metro, Tehran, Iran, 2020</p>
-        <p>Installed more than 1,000 tele-communication hole protector devices, Sharif University of Technology, Tehran, Iran, Jan 2019</p>
-    </section>
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+      <ul>
+        <li>AFM Management Software - Ara Research Co, Tehran, Iran (2021)</li>
+        <li>Temperature Calibrator Device - ACECR, Tehran, Iran (2021)</li>
+      </ul>
 
-    <section id="experinces">
-        <h2>Work Experiences</h2>
-        <p><strong>Technical Lead</strong>, Mar 2022 – Present</p>
-        <p><strong>IroTeam</strong>, Tehran, Iran</p>
-
-        <ul>
-          <li>Led the development of internet-connected boards for applications including condition monitoring, access control, and automatic vehicle locator, enhancing IoT architecture and secure connectivity</li>
-          <li>Architected a multi-tenant web software with ML-powered zone management and a GPT- powered rule engine, optimizing data acquisition and device control.</li>
-          <li>Implemented a Firmware On The Air (FOTA) system, enabling efficient Internet-based firmware updates and comprehensive hardware configuratio</li>
-          <li>Successfully activated over 2,000 devices, demonstrating significant project scalability and efficient application of RTOS in practical scenarios</li>
-          <li>Developed an internet-connected (GSM/WIFI/Ethernet) bare-metal (STM32/Cypress) board for condition monitoring applications as a Gateway or a Data System Acquisition which is powered with a multi-tenant web-software for managing and controlling through a ML-powered zone management capability and a modern rule-engine</li>
-          <li>Developed a server-connected (GSM/WIFI/Ethernet) Linux-based (STM32/Cypress, Nano Pi Due2) board for access control applications as Wiegand/Serial reader controller which is powered with a first-offline synchronization method</li>
-          <li>Established more over 150 VCL forms for user convenience</li>
-          <li>Implemented a plug-and-play connected-device as a temperature/humidity sensor with 8 digital inputs and outputs which is powered with an web-application for manual/automatic controlling</li>
-          <li>Constructed a internet-connected (GSM/WIFI/Ethernet) bare-metal (Cypress) board as part counter in a production line</li>
-          <li>Innovated a bare-metal (STM32) board as a programmable Modbus device (ASCII/RTU) to expand number of digital outputs/inputs (24 digital outputs and inputs)</li>
-          <li>Handled more than 5,000 MQTT messages on each node</li>
-          <li>Increased 30% in the production of equipped greenhouses in 2 years</li>
-          <li>Activated more than 2,000 connected-devices and sensors in 2 years</li>
-          <li>Handled more than 200 Weigand reader and 100 gateways</li>
-          <li>Received and sent more than 10,000 MQTT messages on each access control node</li>
-          <li>Decreased Scanning time up to 20% by multi-process bitmap generating</li>
-        </ul>
-
-        <p><strong>Bare-metal Industrial All-in-One Board</strong></p>
-        <div class="project-image2">
-          <img src="./project1-17.JPG" alt="Bare-metal Industrial All-in-One Board">
-        </div>
-
-        <br><br>
-
-        <p><strong>Linux-based Industrial All-in-one Board</strong></p>
-        <div class="project-image2">
-          <img src="./project1-18.JPG" alt="Linux-based Industrial All-in-One Board">
-        </div>
-
-        <br><br>
-
-        <p><strong>Bare-metal Semi-industrial All-in-one Board</strong></p>
-        <div class="project-image2">
-          <img src="./project1-19.JPG" alt="Bare-metal Semi-industrial All-in-one Board">
-        </div>
-
-        <br><br>
-
-        <p><strong>Linux-based Industrial Weigand Controller Board</strong></p>
-        <div class="project-image2">
-          <img src="./project1-20.JPG" alt="Linux-based Industrial Weigand Controller Board">
-        </div>
-
-        <br><br>
-
-        <p><strong>Linux-based Semi-industrial Weigand Controller Board</strong></p>
-        <div class="project-image2">
-          <img src="./project1-21.JPG" alt="Linux-based Semi-industrial Weigand Controller Board">
-        </div>
-
-        <br><br>
-
-        <p><strong>Plug&Play Connected Sensor</strong></p>
-        <div class="project-image2">
-          <img src="./project1-24.JPG" alt="Plug&Play Connected Sensor">
-        </div>
-
-        <br><br>
-
-        <p><strong>Modbus Sensor</strong></p>
-        <div class="project-image2">
-          <img src="./project1-22.JPG" alt="Modbus Sensor">
-        </div>
-
-        <br><br>
-
-        p><strong>Mqtt Explorer Panel</strong></p>
-        <div class="project-image2">
-          <img src="./project1-23.JPG" alt="Mqtt Explorer Panel">
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/sinapocalypse/iot-condition-monitoring" target="_blank">GitHub Repository</a></p>
-        </div>
-        
-        <br><br>
-        <br><br>
-        <br><br>
-
-        <p><strong>Senior Middleware Engineer</strong>, Mar 2021 – Feb 2022</p>
-        <p><strong>Ara Research Co</strong>, Tehran, Iran</p>
-
-        <ul>
-          <li>Developed an Atomic Force Microscope (AFM) System Controller Software for nano-imaging with 0.1 nm Z and 1 nm XY resolution</li>
-          <li>Designed a 12MHz oscilloscope module with 4 channels and 27 signal ports for AFM signals inspection</li>
-          <li>Prepared an Imager thread with profile viewer to explore 3MB/s TCP scanning data</li>
-          <li>Created an UDP packet sender to guide the system with about 170 commands</li>
-          <li>Defined a multi-capability diagram and graph drawer to display about 60 charts</li>
-          <li>Implemented a mouse painter section for lithography to create a bitmap with a resolution of 2048</li>
-          <li>Established more over 150 VCL forms for user convenience</li>
-          <li>Implemented a mouse painter section for lithography to create a bitmap with a resolution of 2048</li>
-          <li>Earned 30% more user satisfaction by identifying the operative problems compared to similars</li>
-          <li>Formed a wizard procedure for operators to save more than 20% of the performing time</li>
-          <li>Decreased Scanning time up to 20% by multi-process bitmap generating</li>
-          <li>Established more than 30 mathematical tools to analyze the morphology of sample's surface for 2D/3D profile viewing, particle measurement, noise reduction, edge detection, histogram, roughness investigation, elasticity map creation, and etc</li>
-        </ul>
-
-        <p><strong>Brisk2021</strong></p>
-        <div class="project-image2">
-          <img src="./project1-14.JPG" alt="BioBrisk2021">
-        </div>
-
-        <br><br>
-
-        <p><strong>BioBrisk2021</strong></p>
-        <div class="project-image2">
-          <img src="./project1-13.JPG" alt="Brisk2021">
-        </div>
-
-        <br><br>
-
-        <p><strong>Brisk2021 Client Software</strong></p>
-        <div class="project-image2">
-          <img src="./project1-11.JPG" alt="Brisk2021 Client Software 1">
-        </div>
-
-        <div class="project-image2">
-          <img src="./project1-12.JPG" alt="Brisk2021 Client Software 2">
-          <ul>
-            <li>Oscilloscope Panel(2 MB/s UDP): 4 dynamic channels, 27 data ports, pause/play action, dynamic time division, recording, scaling, piezoelectric and sample graphical status</li>
-            <li>Imager Panel (3MB/s TCP): 1D/2D leveling, point and range selection, profile viewer</li>
-            <li>OM magnification panel (8 megapixel CCD): Sample stage XY movement, Dynamic photodiode status, Screenshot and video recording</li>
-            <li>Control Panel: Sample stage Z movement, Piezoelectric 1 step, Retraction, Settings</li>
-          </ul>
-        </div>
-
-        <br><br>
-
-        <p><strong>Brisk2021 Viewer Software</strong></p>
-        <div class="project-image2">
-          <img src="./project1-15.JPG" alt="Brisk2021 Viewer Software">
-          <ul>
-            <li>Display all data ports saved in the Client application</li>
-            <li>Zoom</li>
-            <li>Export</li>
-            <li>Scale changing</li>
-          </ul>
-        </div>
-
-        <br><br>
-
-        <p><strong>Brisk2021 Imager Software</strong></p>
-        <div class="project-image2">
-          <img src="./project1-16.JPG" alt="Brisk2021 Imager Software">
-          <ul>
-            <li>3D and 2D view of scanned data for the mathematical processes</li>
-            <li>Histogram Analyze</li>
-            <li>FFT, LPF, HPF kernels</li>
-            <li>Noise reduction</li>
-            <li>1D and 2D Leveing</li>
-          </ul>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/brisk2021" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the Product Details on Instagram: <a href="https://www.instagram.com/brisk2021_afm/" target="_blank">Instagram</a></p>
-        </div>
-        
-
-        <br><br>
-        <br><br>
-        <br><br>
-
-        <p><strong>Embedded Systems Engineer</strong>, Sep 2017 - Feb 2021</p>
-        <p><strong>Asarad Noavar Ertebat</strong>, Tehran, Iran</p>
-
-        <ul>
-          <li>Formed a C++ time attendance server and middlewares for 10,000 personals to Increase 25% payroll accuracy and decrease 40% of food waste</li>
-          <li>Structured an embedded device to handle over 10,000 fingerprints or RFID transactions/day for time attendance recording</li>
-          <li>Set up a TCP server to manage 1,500 requests/hour and record all data in SQL server</li>
-          <li>Incorporated a TCP server broadcaster to transmit 3,000 messages/day to 20 clients</li>
-          <li>Programmed a server to check the database of 5,000 employees' information each 1 sec and send changes to 20 controllers for working in the first-offline mode over TCP</li>
-          <li>Developed temperature PID controller for Thermo Camera Calibrating as a TCP server to broadcast temperature data with 1KHz sample rate</li>
-        </ul>
-
-        <p><strong>Thermo Camera Calibrator (ACECR SUT branch, Tehran Iran) #COVID19</strong></p>
+      <div class="project-images">
         <div class="project-image">
-          <p>UPASS Access Controller</p>
-          <img src="./project1-10.jpg" alt="TempCalibrator">
-          <ul>
-            <li>Embedded C++ & Linux Platform</li>
-            <li>Web interface</li>
-            <li>PID controller</li>
-          </ul>
+          <img src="./project1-17.JPG" alt="Project 1">
         </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/TempCallibrator" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <p><strong>Access Control and Readers Microserver Manager, Access Control Connected Restuarant Receinpt Issuer, and UPASS Access Controller (Sipa Yadak Company, Tehran, Iran)</strong></p>
         <div class="project-image">
-          <p>UPASS Access Controller</p>
-          <img src="./project1-7.jpg" alt="Upass">
-          <ul>
-            <li>Embedded C++ & Linux platform</li>
-            <li>Recorded of all events (long-range RFID) from the non-blocking serial port thread (over 1,500 events/day)</li>
-            <li>Authorized based on local MySQL query and open/close gateway with permissions</li>
-            <li>Inserted to local MySQL database as first-offline design</li>
-            <li>Synchronized with SQL server database</li>
-            <li>Synchronized all related tables (black lists, white lists, shifts, holidays, personnel info) with SQL server database</li>
-            <li>Using web-service as online monitoring</li>
-          </ul>
+          <img src="./project1-18.JPG" alt="Project 2">
         </div>
-
-        <div class="project-image"></div>
-          <p>Restaurant Receipt Issuer</p>
-          <img src="./project1-8.jpg" alt="Restaurant">
-          <ul>
-            <li>C++ & Windows platform</li>
-            <li>Issued 300 receipts/hour based on-time attendance, black list, and etc of SQL server with finger and RFID authorization</li>
-            <li>Synchronized with SQL server database for offline mode functionality</li>
-            <li>Inserted all transactions in the local MySQL database</li>
-            <li>Synchronized with the server</li>
-            <li>Displayed information for personnel</li>
-            <li>Took all personnel data from the server and inserted in MySQL</li>
-            <li>Derivated of thermal printer, Virdi 2100 plus reader(network SDK)</li>
-          </ul>
-        </div>
-
-        <div class="project-image"></div>
-          <p>Reader Manager</p>
-          <img src="./project1-9.jpg" alt="Server">
-          <ul>
-            <li>C++ & Windows Server Platform</li>
-            <li>Captured online logs from 20 devices in real-time in a separate thread (over 100 events/hour)</li>
-            <li>Captured offline logs from 20 devices in a separate thread (over 1000 events/day)</li>
-            <li>Managed 20 devices from SQL server in a separate thread (personnel information, Fingerprint and Card ID, holidays, department)</li>
-            <li>Inserted, Edited and updated new finger-print and card id on virdi readers</li>
-            <li>Derivated of Virdi SDK, Network</li>
-          </ul>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/AccessRestaurantUpassFingerRegisterar" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <p><strong>Sonography Image Grabber (Payambaran Hospital, Tehran, Iran)</strong></p>
-        <div class="project-image">
-          <img src="./project1-6.jpg" alt="Sono">
-          <ul>
-            <li>Getting video data with a capture card</li>
-            <li>Screenshot with Doctor request</li>
-            <li>Edge detection and Color correction to save ink consumption</li>
-          </ul>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <p><strong>Parking Receipt Issuer (SamanPark Co, Tehran, Iran)</strong></p>
-        <div class="project-image">
-          <img src="./project1-5.jpg" alt="Hospital">
-          <ul>
-            <li>Embedded C++ & Linux platform</li>
-            <li>Printer</li>
-            <li>Voice</li>
-            <li>GPIO</li>
-            <li>HID RFID reader</li>
-            <li>LCD</li>
-          </ul>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/hospital-kiosk" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <p><strong>Parking Receipt Issuer (Tolou Co, Tehran, Iran)</strong></p>
-        <div class="project-image">
-          <img src="./project1-4.jpg" alt="Parking">
-          <ul>
-            <li>Embedded C++ & Linux platform</li>
-            <li>Recording of all requests (RFID and Push-button pushing) from the non-blocking serial port thread (over 1,000 events/day)</li>
-            <li>Calling web service for permission checking and printing text</li>
-            <li>Printing receipts, and inform people with LCD and speaker messages</li>
-            <li>Driving of the network, barcode scanner, LCD, Thermal Pritner, speaker and amplifier, RFID reader, and GPIO</li>
-            <!-- Add more courses here -->
-          </ul>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/parking-kiosk" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <p><strong>Developed Tehran Metro Automatic Fare Collection Reader (ACECR KNUT branch, Tehran, Tehran, Iran)</strong></p>
-        <div class="project-image2"></div>
-          <p>Architecture</p>
-          <img src="./project1-25.JPG" alt="AFC Architecture">
-        </div>
-        <br><br>
-
-        <div class="project-image">
-          <p>Controller</p>
-          <img src="./project1-3.jpg" alt="AFC">
-          <ul>
-            <li>Embedded C++ & Linux platform</li>
-            <li>Recording of all events (RFID and Barcode) from the non-blocking serial port thread (over 10,000 events/day)</li>
-            <li>Authorization based on local Couchebase database query and open/close gateway with permissions</li>
-            <li>Insertion to local Couchebase database as first-offline design and synchronization with Couchebase server database</li>
-            <li>Gate management and fraud detection base on Time.</li>
-            <li>Design and implementation of SDK board to communicate with peripherals</li>
-            <li>Derivation of the network, barcode scanner, Mifare RFID reader, LCD, and GPIO</li>
-            <!-- Add more courses here -->
-          </ul>
-        </div>
-
-        <p>----------</p>
-        <br><br>
-        <br><br>
-        <!-- -- -->
-
-        <!-- New Content: Picture and Description under Asarad Noavar Ertebat -->
-        <p><strong>Developed Ticket Scanner to handle up to 5000 request/day</strong></p>
-        <div class="project-image">
-          <img src="./project1-1.jpg" alt="ID Card Scanner">
-          <ul>
-            <li>ID Card Scanner (Tehran Taxi Organization - ACECR KNUT branch, Tehran, Iran)</li>
-            <li>Orange Pi PC (QT - C++ - Embedded Linux)</li>
-          </ul>
-        </div>
-
-        <br><br>
-
-        <!-- Second Image (New Image on the right) -->
-        <div class="project-image">
-          <img src="./project1-2.jpg" alt="Ticket Scanner">
-          <ul>
-            <li>ID Card Scanner (Tehran Taxi Organization - ACECR KNUT branch, Tehran, Iran)</li>
-            <li>Orange Pi PC (QT - C++ - Embedded Linux)</li>
-          </ul>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="project-link">
-          <p>See the project on GitHub: <a href="https://github.com/aliahmadi9371/barcode-readers" target="_blank">GitHub Repository</a></p>
-        </div>
-
-    </section>
-    
-  </section>
-
-  <!-- New Gallery Section -->
-  <section id="gallery">
-    <h2>Work Gallery</h2>
-
-    <!-- Thumbnails for the gallery -->
-    <div class="gallery">
-      <img src="./project3-1.jpg" alt="Project 1" data-full="./project3-1.jpg" data-caption="My SBCs: ESP32, Raspberry pi model 3, Lichee Pi nano, and Nano Pi due2">
-      <img src="./project3-2.jpg" alt="Project 2" data-full="./project3-2.jpg" data-caption="My Arduinos voards and AVR microcontrollers: Arduino Uno, Arduino Mini, ATmega16">
-      <img src="./project3-3.jpg" alt="Project 3" data-full="./project3-3.jpg" data-caption="My STM32 boards: Blue pil STM32F103, and STM32f* dev. kit">
-      <img src="./project3-4.jpg" alt="Project 4" data-full="./project3-4.jpg" data-caption="My Cypress boards: PSOC5, PSOC4, and PSOC3">
-      <img src="./project3-5.jpg" alt="Project 5" data-full="./project3-5.jpg" data-caption="My Modules, sensors, and evaluation boards">
-      <img src="./project3-6.jpg" alt="Project 6" data-full="./project3-6.jpg" data-caption="My FriendlyARM Tiny210">
-      <img src="./project3-7.jpg" alt="Project 7" data-full="./project3-7.jpg" data-caption="Condition monitoring and control boards: Gateway, Data System Acquisition, Linux-based and Bare-metal and Zigbee and Lora repeater">
-      <img src="./project3-8.jpg" alt="Project 8" data-full="./project3-8.jpg" data-caption="Plug&Play connected/Modbus sensor">
-      <img src="./project3-9.jpg" alt="Project 9" data-full="./project3-9.jpg" data-caption="My programmers and wired data tranmitters">
-      <img src="./project3-10.jpg" alt="Project 10" data-full="./project3-10.jpg" data-caption="My Quectel M66 OpenCPU dev. kit">
-      <img src="./project3-11.jpg" alt="Project 11" data-full="./project3-11.jpg" data-caption="My Little Lab 1">
-      <img src="./project3-12.jpg" alt="Project 12" data-full="./project3-12.jpg" data-caption="My Little Lab 2">
-      <img src="./project3-13.jpg" alt="Project 13" data-full="./project3-13.jpg" data-caption="My Little Lab 3">
-      <img src="./project3-14.jpg" alt="Project 14" data-full="./project3-14.jpg" data-caption="My Modbus Sensors">
-      <img src="./project3-15.jpg" alt="Project 15" data-full="./project3-15.jpg" data-caption="Power supplys">
-      <img src="./project3-16.jpg" alt="Project 16" data-full="./project3-16.jpg" data-caption="Condition monitorin and control prototype">
-      <img src="./project3-17.jpg" alt="Project 17" data-full="./project3-17.jpg" data-caption="Access Controler prototype">
-      <img src="./project3-18.jpg" alt="Project 18" data-full="./project3-18.jpg" data-caption="Orange Pi SDK Board 1">
-      <img src="./project3-19.jpg" alt="Project 19" data-full="./project3-19.jpg" data-caption="Orange Pi SDK Board 2">
-      <img src="./project3-20.jpg" alt="Project 20" data-full="./project3-20.jpg" data-caption="AFC SDK Board">
-    </div>
-
-    <!-- Modal for full-size image -->
-    <div id="imageModal" class="modal">
-      <span class="close">&times;</span>
-      <div class="modal-content">
-        <img id="modalImage" src="" alt="">
-        <p class="modal-caption" id="modalCaption"></p>
       </div>
-    </div>
-
+    </section>
   </section>
 
-</section>
-
-<script>
-  // JavaScript for the gallery modal
-  const galleryImages = document.querySelectorAll('.gallery img');
-  const modal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
-  const closeModal = document.querySelector('.close');
-
-  galleryImages.forEach(image => {
-    image.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      modalImage.src = image.getAttribute('data-full');
-      modalCaption.textContent = image.getAttribute('data-caption');
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal if clicking outside the modal content
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-</script>
+  <footer>
+    <a href="https://www.linkedin.com/in/aliahmadi9371/">LinkedIn</a> |
+    <a href="https://github.com/aliahmadi9371">GitHub</a> |
+    <a href="mailto:aliahmadi9371@gmail.com">ali.ahmadi9371@gmail.com</a>
+  </footer>
 
 </body>
 </html>
