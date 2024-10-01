@@ -6,115 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ali Ahmadi's Portfolio</title>
   <style>
-    /* Minimal and Clean Soft Dark Theme */
+    /* Simple Dark Theme */
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #2c2c2c; /* Softer dark theme */
-      color: #f2f2f2;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
     }
-
-    /* Header Styles */
     header {
-      background-color: #3b3b3b;
+      background-color: #333;
       padding: 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     header img {
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
+      width: 200px;
+      height: 200px;
     }
     header h1 {
-      margin: 15px 0;
-      font-size: 24px;
+      margin: 10px 0;
     }
     header nav {
-      margin-top: 10px;
+      margin-top: 15px;
     }
     header nav a {
       color: #f39c12;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 15px;
       font-size: 18px;
-      transition: color 0.3s ease;
     }
-    header nav a:hover {
+    /* Change the color of LinkedIn, email, and phone number to white */
+    header p a, header p {
       color: #ffffff;
     }
-
-    /* Main Section */
     section {
-      padding: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: left;
+      padding: 20px;
+      text-align: left; /* Ensure left-alignment */
     }
-
-    /* Titles and Content */
-    h2 {
-      font-size: 26px;
-      color: #f39c12;
-      border-bottom: 2px solid #f39c12;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    ul li::before {
-      content: "•";
-      color: #f39c12;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #3b3b3b;
-      text-align: center;
-      padding: 15px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    }
-    footer a {
+    section a {
       color: #f39c12;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      transition: color 0.3s ease;
+      font-size: 20px;
     }
-    footer a:hover {
-      color: #ffffff;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      section {
-        padding: 20px;
-      }
-      header img {
-        width: 100px;
-        height: 100px;
-      }
-      header h1 {
-        font-size: 20px;
-      }
-      header nav a {
-        font-size: 16px;
-      }
+    /* Left-align content without centering it on the page */
+    .left-aligned {
+      margin: 0; /* Remove margins that may center content */
+      max-width: 800px;
     }
   </style>
 </head>
@@ -123,6 +60,13 @@
   <header>
     <img src="./your-profile-image.jpg" alt="Ali Ahmadi">
     <h1>Ali Ahmadi</h1>
+    <p><a href="https://www.linkedin.com/in/aliahmadi9371/">LinkedIn</a> | 
+      <a href="https://github.com/aliahmadi9371">Github</a> |
+       <a href="mailto:aliahmadi9371@gmail.com">ali.ahmadi9371@gmail.com</a> | 
+       <a href="tel:+1234567890">+98 912-647-0868</a> | 
+       <a href="cv.pdf" download>CV</a>
+    </p>
+    
     <nav>
       <a href="academic.html">Academic Experiences</a>
       <a href="work.html">Work Experiences</a>
@@ -131,25 +75,30 @@
 
   <section>
     <h2>Welcome to My Portfolio</h2>
-    <p>Explore my academic and work experiences through the links above.</p>
-    <p>I received the B.S. and M.S. degrees in Electrical Engineering from Sharif University of Technology, Tehran, Iran. My research interests include:</p>
-    <ul>
-      <li>Embedded/Cyber-Physical Systems Engineering</li>
-      <li>Internet of Things (Smart Spaces / Access Control)</li>
-      <li>Hardware Interfacing and Prototyping</li>
-      <li>Middleware Engineering</li>
-      <li>Edge AI and Edge Computing</li>
-      <li>Human-Computer Interface</li>
-      <li>Machine Learning and Deep Learning</li>
-      <li>Bio-Electronics</li>
-    </ul>
-  </section>
+    <p>Click on the links above to explore my Academic and Work Experiences.</p>
+    </p></p>
+    </p></p>
+    </p></p>
 
-  <footer>
-    <a href="https://www.linkedin.com/in/aliahmadi9371/">LinkedIn</a> |
-    <a href="https://github.com/aliahmadi9371">GitHub</a> |
-    <a href="mailto:aliahmadi9371@gmail.com">ali.ahmadi9371@gmail.com</a>
-  </footer>
+    <div class="left-aligned">
+        <p>Ali received the B.S. and M.S. degrees in electrical engineering from Sharif University of Technology, Tehran, Iran, in 2016 and 2019, respectively.</p>
+        
+        <p>His research interests include:</p>
+        <ul>
+          <li>Embedded/Cyber-Physical Systems Engineering</li>
+          <li>Internet of Things (Smart Spaces / Access Control)</li>
+          <li>Hardware Interfacing and Prototyping</li>
+          <li>Middleware Engineering</li>
+          <li>Edge AI and Edge Computing</li>
+          <li>Human-Computer Interface</li>
+          <li>Machine Learning and Deep Learning</li>
+          <li>Bio-Electronics</li>
+        </ul>
+  
+        <p>He ranked in the top 0.02% (85th) out of approximately 284,000 participants in the National Entrance Exam for Iranian Universities, July 2011.</p>
+        <p>In the past, he spent most of his leisure time on playing soccer and video games, respectively!</p>
+      </div>
+  </section>
 
 </body>
 </html>
